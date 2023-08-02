@@ -1,0 +1,22 @@
+﻿  Скопировано файлов:         1.
+  Скопировано файлов:         1.
+  Скопировано файлов:         1.
+  Скопировано файлов:         1.
+  Скопировано файлов:         1.
+  Скопировано файлов:         1.
+  Подпапка или файл C:\Старый десктоп\Не по игре\Лабы\М1 семестр\AntLassic 0.2\AntLassic-0.2\SFML_template\x64\Debug Dynamic\resources уже существует.
+  C:\Старый десктоп\Не по игре\Лабы\М1 семестр\AntLassic 0.2\AntLassic-0.2\SFML_template\resources\clickSound.ogg
+  C:\Старый десктоп\Не по игре\Лабы\М1 семестр\AntLassic 0.2\AntLassic-0.2\SFML_template\resources\comic.ttf
+  C:\Старый десктоп\Не по игре\Лабы\М1 семестр\AntLassic 0.2\AntLassic-0.2\SFML_template\resources\comicz.ttf
+  C:\Старый десктоп\Не по игре\Лабы\М1 семестр\AntLassic 0.2\AntLassic-0.2\SFML_template\resources\font.ttf
+  C:\Старый десктоп\Не по игре\Лабы\М1 семестр\AntLassic 0.2\AntLassic-0.2\SFML_template\resources\timesnewroman.ttf
+  C:\Старый десктоп\Не по игре\Лабы\М1 семестр\AntLassic 0.2\AntLassic-0.2\SFML_template\resources\winSound.ogg
+  Скопировано файлов:         6.
+  main.cpp
+c:\старый десктоп\не по игре\лабы\8 семестр\sfml\csf\sfml_template\csf\base\baseobject.h(165): warning C4458: объявление "textureRect" скрывает член класса
+  c:\старый десктоп\не по игре\лабы\8 семестр\sfml\csf\sfml_template\csf\base\baseobject.h(53): note:  см. объявление "csf::BaseObject::textureRect"
+c:\старый десктоп\не по игре\лабы\8 семестр\sfml\csf\sfml_template\csf\base\baseobject.h(165): warning C4100: textureRect: неиспользованный формальный параметр
+c:\старый десктоп\не по игре\лабы\м1 семестр\antlassic 0.2\antlassic-0.2\sfml_template\scenes.h(30): warning C4100: window: неиспользованный формальный параметр
+c:\старый десктоп\не по игре\лабы\м1 семестр\antlassic 0.2\antlassic-0.2\sfml_template\scenes.h(40): warning C4100: window: неиспользованный формальный параметр
+c:\старый десктоп\не по игре\лабы\м1 семестр\antlassic 0.2\antlassic-0.2\sfml_template\main.cpp(29): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  SFML_template.vcxproj -> C:\Старый десктоп\Не по игре\Лабы\М1 семестр\AntLassic 0.2\AntLassic-0.2\SFML_template\x64\Debug Dynamic\SFML_template.exe
