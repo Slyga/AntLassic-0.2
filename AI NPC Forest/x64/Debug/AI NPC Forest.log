@@ -1,7 +1,11 @@
 ﻿  ActionBranch.cpp
+C:\Старый десктоп\Не по игре\Лабы\М1 семестр\AntLassic 0.2\AntLassic-0.2\AI NPC Forest\Node.h(13,9): error C2065: ActionBranch: необъявленный идентификатор
+C:\Старый десктоп\Не по игре\Лабы\М1 семестр\AntLassic 0.2\AntLassic-0.2\AI NPC Forest\Node.h(13,2): error C2923: std::vector: "ActionBranch" не является допустимым аргументом типа шаблон для параметра "_Ty"
+C:\Старый десктоп\Не по игре\Лабы\М1 семестр\AntLassic 0.2\AntLassic-0.2\AI NPC Forest\Node.h(13): message : см. объявление "ActionBranch"
+C:\Старый десктоп\Не по игре\Лабы\М1 семестр\AntLassic 0.2\AntLassic-0.2\AI NPC Forest\Node.h(13,2): error C2976: std::vector: слишком мало аргументов шаблон
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\vector(496): message : см. объявление "std::vector"
   ActionTree.cpp
-  AI NPC Forest.cpp
+C:\Старый десктоп\Не по игре\Лабы\М1 семестр\AntLassic 0.2\AntLassic-0.2\AI NPC Forest\ActionBranch.h(5,1): error C2504: Node: не определен базовый класс
   Node.cpp
-  ProgenitorActionForest.cpp
+C:\Старый десктоп\Не по игре\Лабы\М1 семестр\AntLassic 0.2\AntLassic-0.2\AI NPC Forest\ActionBranch.h(5,1): error C2504: Node: не определен базовый класс
   Создание кода...
-  AI NPC Forest.vcxproj -> C:\Старый десктоп\Не по игре\Лабы\М1 семестр\AntLassic 0.2\AntLassic-0.2\AI NPC Forest\x64\Debug\AI NPC Forest.exe
