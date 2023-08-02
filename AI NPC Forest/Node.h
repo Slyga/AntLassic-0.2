@@ -1,18 +1,26 @@
 #pragma once
 
 #include <vector>
-#include "ActionBranch.h"
 #include "TypeBehavior.h"
-
-using namespace std;
 
 class Node
 {
 protected:
-	
-	vector<ActionBranch> sheets;
-	vector<int> followingActins;
+	/// <summary>
+	/// Список последующих узлов
+	/// </summary>
+	std::vector<Node*> sheets;
+	/// <summary>
+	/// Список действий для последующих узлов
+	/// </summary>
+	std::vector<int> followingActins;
+	/// <summary>
+	/// Глубина узла
+	/// </summary>
 	int nodeDepth;
+	/// <summary>
+	/// Следующий узел, использовавшийся прошлый раз
+	/// </summary>
 	int indexNextNode;
 
 	/// <summary>
@@ -27,7 +35,7 @@ protected:
 	/// Возврат списока действий для последующих узлов
 	/// </summary>
 	/// <returns>Список действий для последующих узлов</returns>
-	vector<int> GetFollowingActions();
+	std::vector<int> GetFollowingActions();
 
 	/// <summary>
 	/// Проверка есть ли ещё не созданные узлы
@@ -54,15 +62,36 @@ public:
 	/// </summary>
 	TypeBehavior typeThisNode;
 
+	Node();
+
 	/// <summary>
 	/// Проверка есть ли ещё не созданные узлы
 	/// </summary>
 	/// <returns>true - есть, false - нет</returns>
 	void ClearIndexNextNode();
 
+	/// <summary>
+	/// Возвращает общее количество выполненных действий у узла и у последющих узлов
+	/// </summary>
+	/// <returns>Общее количество выполненных действий у узла и у последющих узлов</returns>
 	virtual unsigned int GetAmountOfAction() = 0;
+	
+	/// <summary>
+	/// Возвращает общий счёт узла и следющих использованных узлов
+	/// </summary>
+	/// <returns>Общее счёт узла и последющих узлов</returns>
 	virtual double GetGeneralScore() = 0;
+	
+	/// <summary>
+	/// Повысить количество выйгрышных использований у узла и следующих использованных узлов
+	/// </summary>
 	virtual void WinningGameUpgrade() = 0;
+	
+	/// <summary>
+	/// Возврат изменения модификатора поколения
+	/// </summary>
+	/// <param name="GeneralScore">Общий рейтинг дерева</param>
+	/// <return>Изменение модификатора поколения</return>
 	virtual int GetMaxDepth() = 0;
 };
 
