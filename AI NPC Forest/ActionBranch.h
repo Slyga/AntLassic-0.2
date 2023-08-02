@@ -15,7 +15,7 @@ private:
     /// isUsed Ч сейчас используетс€
     /// alreadyUsed Ч уже использовалось
     /// </summary>
-	enum StatusUsed { noActive, isUsed, alredyUsed}
+	enum StatusUsed { noActive, isUsed, alreadyUsed}
 	statusUsed;
 
     /// <summary>
@@ -121,7 +121,7 @@ public:
     /// <param name="actionBranch">”зел дерева-родител€</param>
     /// <param name="generalScore">ќбщий рейтинг дерева</param>
     /// <param name="increaseNumberUses">”величивать количество использований</param>
-    void InformationTransfer(ActionBranch actionBranch, double generalScore, bool increaseNumberUses);
+    void InformationTransfer(ActionBranch *actionBranch, double generalScore, bool increaseNumberUses);
 
     /// <summary>
     /// ¬вод счЄта последнего выполненного действи€

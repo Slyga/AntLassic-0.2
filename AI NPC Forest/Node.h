@@ -29,7 +29,7 @@ protected:
 	/// <param name="amountOfAction">Общее количество выполненных действий в дереве</param>
 	/// <param name="treeDepth">Глубина дерева</param>
 	/// <returns>Индекс выбранного действия</returns>
-	int ChoiseSheet(unsigned int amountOfAction, int& treeDepth);
+	int ChoiseSheet(unsigned int amountOfAction, unsigned int& treeDepth);
 
 	/// <summary>
 	/// Возврат списока действий для последующих узлов
@@ -54,7 +54,7 @@ protected:
 	/// </summary>
 	/// <param name="treeDepth">Глубина дерева</param>
 	/// <returns>Индекс добавленного узла</returns>
-	int SetSheets(int &treeDepth);
+	int SetSheets(unsigned int &treeDepth);
 
 public:
 	/// <summary>

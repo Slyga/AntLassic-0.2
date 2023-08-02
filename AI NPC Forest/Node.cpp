@@ -1,11 +1,10 @@
 #include <math.h>
-#include <iostream>
 #include <limits>
 #include <stdlib.h>
 #include "Node.h"
 #include "ActionBranch.h"
 
-int Node::ChoiseSheet(unsigned int amountOfAction, int& treeDepth)
+int Node::ChoiseSheet(unsigned int amountOfAction, unsigned int& treeDepth)
 {
     double EvaluationNewActionBranch = 0;
     if (amountOfAction != 0)
@@ -13,7 +12,7 @@ int Node::ChoiseSheet(unsigned int amountOfAction, int& treeDepth)
         EvaluationNewActionBranch = sqrt(2 * log(amountOfAction));
     }
     double maxEvaluation = std::numeric_limits<double>::denorm_min();
-    int item = 0;
+    size_t item = 0;
     for (size_t i = 0; i < sheets.size(); i++)
     {
         if (sheets[i] != NULL)
@@ -73,9 +72,9 @@ bool Node::IsAnySheets()
     return false;
 }
 
-int Node::SetSheets(int& treeDepth)
+int Node::SetSheets(unsigned int& treeDepth)
 {
-    srand(time(NULL));
+    srand((unsigned int)time(NULL));
     int indexAction;
     do
     {
