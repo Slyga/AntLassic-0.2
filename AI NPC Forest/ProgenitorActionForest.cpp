@@ -4,7 +4,7 @@ ProgenitorActionForest::ProgenitorActionForest()
 {
 }
 
-ProgenitorActionForest::ProgenitorActionForest(std::vector<ActionTree> actionTrees_, BehaviorSelector behaviorSelector_)
+ProgenitorActionForest::ProgenitorActionForest(std::vector<ActionTree> actionTrees_, BehaviorSelector* behaviorSelector_)
 {
 }
 

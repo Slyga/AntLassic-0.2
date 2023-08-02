@@ -13,7 +13,7 @@ protected:
 	/// <summary>
 	/// Список действий для последующих узлов
 	/// </summary>
-	std::vector<int> followingActins;
+	std::vector<int> followingActions;
 	/// <summary>
 	/// Глубина узла
 	/// </summary>
@@ -60,8 +60,11 @@ public:
 	/// <summary>
 	/// Тип поведения данного узла. Зависит от типа поведения Action
 	/// </summary>
-	TypeBehavior typeThisNode;
+	TypeBehavior typeBehavior;
 
+	/// <summary>
+	/// Конструктор
+	/// </summary>
 	Node();
 
 	/// <summary>
@@ -94,4 +97,3 @@ public:
 	/// <return>Изменение модификатора поколения</return>
 	virtual int GetMaxDepth() = 0;
 };
-

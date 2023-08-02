@@ -31,7 +31,7 @@ public:
 	/// </summary>
 	/// <param name="actionTrees_">Список деревьев</param>
 	/// <param name="behaviorSelector_">Переключатель между деревьями</param>
-	ProgenitorActionForest(std::vector<ActionTree> actionTrees_, BehaviorSelector behaviorSelector_);
+	ProgenitorActionForest(std::vector<ActionTree> actionTrees_, BehaviorSelector* behaviorSelector_);
 
 	/// <summary>
 	/// Конструктор копирования
