@@ -1,5 +1,7 @@
 #include "ActionTree.h"
 #include "ActionBranch.h"
+#include <iostream>
+#include <string>
 
 ActionTree::ActionTree()
 	: Node()
@@ -143,6 +145,48 @@ int ActionTree::Start()
 	return sheet->Start(amountOfAction, treeDepth);
 }
 
+
 void ActionTree::Print(int numOutputLength)
 {
+	int outputLength;
+	std::string outputType;
+	switch (abs(numOutputLength))
+	{
+	case 1: outputType = "numberGame"; outputLength = 6; break;
+	case 2: outputType = "price"; outputLength = 7; break;
+	case 3: outputType = "startPrice"; outputLength = 7; break;
+	case 4: outputType = "modifier"; outputLength = 8; break;
+	default: outputType = "numberGame"; outputLength = 6; break;
+	}
+	if (numOutputLength < 0) outputLength = -1;
+	std::cout << outputType << std::endl;
+	std::cout << "Количество использований: " << amountOfAction << std::endl;
+	for (int depth = 1; depth <= treeDepth; depth++)
+	{
+		std::cout << depth << ":- ";
+		for (size_t i = 0; i < sheets.size(); i++)
+		{
+			ActionBranch* sheet = (ActionBranch*)sheets[i];
+			if (sheet != NULL)
+			{
+				sheet->Print(depth, treeDepth, outputType, outputLength);
+			}
+			else
+			{
+				if (outputLength > 0)
+					for (size_t j = 0; j < pow(followingActions.size(), depth - 1); j++)
+					{
+						for (int k = 1; k <= (pow(followingActions.size(), treeDepth - depth - 1) - 0.5) * outputLength; k++)
+							std::cout << " ";
+						for (int i = 0; i < outputLength - 1; i++)
+							std::cout << "_";
+						std::cout << " ";
+						for (int k = 1; k <= (pow(followingActions.size(), treeDepth - depth - 1) - 0.5) * outputLength; k++)
+							std::cout << " ";
+					}
+
+			}
+		}
+		std::cout << std::endl;
+	}
 }

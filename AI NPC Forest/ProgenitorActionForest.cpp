@@ -1,4 +1,5 @@
 #include "ProgenitorActionForest.h"
+#include <iostream>
 
 ProgenitorActionForest::ProgenitorActionForest()
 {
@@ -30,6 +31,27 @@ BehaviorSelector* ProgenitorActionForest::GetCloneBehaviorSelector()
 	return behaviorSelector->GetCloneBehaviorSelector();
 }
 
+void ProgenitorActionForest::Delete()
+{
+	for (size_t i = 0; i < actionTrees.size(); i++)
+	{
+		if (actionTrees[i] != NULL)
+		{
+			actionTrees[i]->Delete();
+			delete actionTrees[i];
+			actionTrees[i] = NULL;
+		}
+	}
+}
+
 void ProgenitorActionForest::Print(int numOutputLength)
 {
+	for (size_t i = 0; i < actionTrees.size(); i++)
+	{
+		ActionTree* tree = actionTrees[i];
+		std::cout << "Дерево " << tree->typeBehavior << std::endl;
+		tree->Print(numOutputLength);
+		std::cout << std::endl;
+	}
+	std::cout << "##################################################################################" << std::endl;
 }

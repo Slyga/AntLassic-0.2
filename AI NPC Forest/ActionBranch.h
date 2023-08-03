@@ -138,6 +138,8 @@ public:
     /// <return>Индекс выбранного действия</return>
     int Start(unsigned int& amountOfAction, unsigned int& treeDepth);
 
+    
+
     void Print(int depth, int treeDepth, std::string outputType, int outputLength);
 };
 

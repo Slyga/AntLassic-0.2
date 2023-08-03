@@ -105,3 +105,17 @@ void Node::ClearIndexNextNode()
         indexNextNode = -1;
     }
 }
+
+void Node::Delete()
+{
+    for (size_t i = 0; i < sheets.size(); i++)
+    {
+        ActionBranch* sheet = (ActionBranch*)sheets[i];
+        if (sheet != NULL)
+        {
+            sheet->Delete();
+            delete sheet;
+            sheets[i] = NULL;
+        }
+    }
+}

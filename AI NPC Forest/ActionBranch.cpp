@@ -1,5 +1,6 @@
 #include <math.h>
 #include <stdlib.h>
+#include <iostream>
 #include "ActionBranch.h"
 
 double ActionBranch::GetBalancingTerm(unsigned int amountOfAction, unsigned int numberOfGames)
@@ -194,6 +195,52 @@ int ActionBranch::Start(unsigned int& amountOfAction, unsigned int& treeDepth)
     return -1;
 }
 
+
+
 void ActionBranch::Print(int depth, int treeDepth, std::string outputType, int outputLength)
 {
+    if (nodeDepth == depth)
+    {
+        for (int k = 1; k <= (pow(followingActions.size(), treeDepth - depth - 1) - 0.5) * outputLength; k++)
+            std::cout << " ";
+
+        std::cout << ActivAction << ":";
+
+        if (outputType == "numberGame")
+            std::cout << ActivAction << "/" << numberOfGames << " ";
+        if (outputType == "price")
+            std::cout << actionBranchEvaluation << " ";
+        if (outputType == "startPrice")
+            std::cout << startingActionBranchEvaluation << " ";
+        if (outputType == "modifier")
+            std::cout << generationModifier << " ";
+
+        for (int k = 1; k <= (pow(followingActions.size(), treeDepth - depth - 1) - 0.5) * outputLength; k++)
+            std::cout << " ";
+    }
+    else if (nodeDepth < depth)
+    {
+        for (size_t i = 0; i < sheets.size(); i++)
+        {
+            ActionBranch* sheet = (ActionBranch*)sheets[i];
+            if (sheet != NULL)
+            {
+                sheet->Print(depth, treeDepth, outputType, outputLength);
+            }
+            else
+            {
+                if (outputLength > 0)
+                    for (int j = 0; j < pow(followingActions.size(), depth - nodeDepth - 1); j++)
+                    {
+                        for (int k = 1; k <= (pow(followingActions.size(), treeDepth - depth - 1) - 0.5) * outputLength; k++)
+                            std::cout << " ";
+                        for (int i = 0; i < outputLength - 1; i++)
+                            std::cout << "_";
+                        std::cout << " ";
+                        for (int k = 1; k <= (pow(followingActions.size(), treeDepth - depth - 1) - 0.5) * outputLength; k++)
+                            std::cout << " ";
+                    }
+            }
+        }
+    }
 }

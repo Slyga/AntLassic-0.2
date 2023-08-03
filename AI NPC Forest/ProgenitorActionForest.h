@@ -51,6 +51,11 @@ public:
 	/// <returns>Клон переключателя поведения</returns>
 	BehaviorSelector* GetCloneBehaviorSelector();
 
+	/// <summary>
+	/// Всех деревьев в лесу
+	/// </summary>
+	void Delete();
+
 	void Print(int numOutputLength);
 };
 
