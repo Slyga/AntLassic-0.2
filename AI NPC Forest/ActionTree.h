@@ -19,7 +19,7 @@ private:
     /// <summary>
     /// Глубина дерева
     /// </summary>
-    int treeDepth;
+    unsigned int treeDepth;
 
 public:
 
@@ -66,7 +66,7 @@ public:
     /// Передача инофрмации деревьям в лес-родитель
     /// </summary>
     /// <param name="actionTree">дерево леса-родителя</param>
-    void InformationTransfer(ActionTree &actionTree);
+    void InformationTransfer(ActionTree *actionTree);
 
     /// <summary>
     /// Ввод счёта последнего выполненного действия

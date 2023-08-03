@@ -128,7 +128,7 @@ double ActionBranch::GetGenerationModifierChanging(double generalScore)
     return abs(actionBranchEvaluation - startingActionBranchEvaluation) * lastScoreAction;
 }
 
-void ActionBranch::InformationTransfer(ActionBranch *actionBranch, double generalScore, bool increaseNumberUses)
+void ActionBranch::InformationTransfer(ActionBranch *actionBranch, double generalScore, bool increaseNumberUses = true)
 {
     actionBranch->startingActionBranchEvaluation = actionBranchEvaluation;
     if (increaseNumberUses) actionBranch->numberOfGames++;
