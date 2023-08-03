@@ -9,7 +9,7 @@ private:
     /// <summary>
     /// Дерево родитель
     /// </summary>
-    ProgenitorActionForest progenitorActionForest;
+    ProgenitorActionForest* progenitorActionForest;
 
 public:
 
@@ -24,7 +24,7 @@ public:
     /// <param name="progenitorActionForest_">Дерево родитель</param>
     /// <param name="actionTrees_">Список деревьев</param>
     /// <param name="choiseActionTrees">Функция переключателя между деревьями</param>
-    ActionForest(ProgenitorActionForest &progenitorActionForest_);
+    ActionForest(ProgenitorActionForest *progenitorActionForest_);
 
     /// <summary>
     /// Ввод счёта последнего выполненного действия

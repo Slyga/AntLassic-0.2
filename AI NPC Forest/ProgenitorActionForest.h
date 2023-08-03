@@ -6,7 +6,7 @@
 
 class ProgenitorActionForest
 {
-private:
+protected:
 	/// <summary>
 	/// Переключатель между деревьями
 	/// </summary>
