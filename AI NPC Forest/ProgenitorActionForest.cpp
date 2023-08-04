@@ -13,7 +13,7 @@ ProgenitorActionForest::ProgenitorActionForest(std::vector<ActionTree*> actionTr
 	actionTrees = std::vector<ActionTree*>(actionTrees_.size());
 	for (size_t i = 0; i < actionTrees_.size(); i++)
 	{
-		actionTrees.push_back(actionTrees_[i]);
+		actionTrees[i] = new ActionTree(actionTrees_[i]);
 	}
 	behaviorSelector = behaviorSelector_->GetCloneBehaviorSelector();
 }
@@ -42,6 +42,8 @@ void ProgenitorActionForest::Delete()
 			actionTrees[i] = NULL;
 		}
 	}
+	delete behaviorSelector;
+	behaviorSelector = NULL;
 }
 
 void ProgenitorActionForest::Print(int numOutputLength)

@@ -11,8 +11,8 @@ int Node::ChoiseSheet(unsigned int amountOfAction, unsigned int& treeDepth)
     {
         EvaluationNewActionBranch = sqrt(2 * log(amountOfAction));
     }
-    double maxEvaluation = std::numeric_limits<double>::denorm_min();
-    size_t item = 0;
+    double maxEvaluation = -std::numeric_limits<double>::max();
+    int item = -1;
     for (size_t i = 0; i < sheets.size(); i++)
     {
         if (sheets[i] != NULL)
@@ -78,7 +78,7 @@ int Node::SetSheets(unsigned int& treeDepth)
     int indexAction;
     do
     {
-        indexAction = rand() % (followingActions.size() + 1);
+        indexAction = rand() % (followingActions.size());
     } while (followingActions[indexAction] == -1);
 
     sheets[indexAction] = new ActionBranch(followingActions[indexAction], GetFollowingActions(), typeBehavior, nodeDepth + 1);

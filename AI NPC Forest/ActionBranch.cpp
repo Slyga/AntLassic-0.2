@@ -30,10 +30,6 @@ ActionBranch::ActionBranch(int ActivAction_, std::vector<int> followingActions_,
     ActivAction = ActivAction_;
     followingActions = std::vector<int>(followingActions_);
     sheets = std::vector<Node*>(followingActions.size());
-    for (size_t i = 0; i < followingActions.size(); i++)
-    {
-        sheets.push_back(NULL);
-    }
     typeBehavior = typeBehavior_;
     nodeDepth = nodeDepth_;
 }
@@ -207,7 +203,7 @@ void ActionBranch::Print(int depth, int treeDepth, std::string outputType, int o
         std::cout << ActivAction << ":";
 
         if (outputType == "numberGame")
-            std::cout << ActivAction << "/" << numberOfGames << " ";
+            std::cout << numberOfGames << " ";
         if (outputType == "price")
             std::cout << actionBranchEvaluation << " ";
         if (outputType == "startPrice")
@@ -232,11 +228,14 @@ void ActionBranch::Print(int depth, int treeDepth, std::string outputType, int o
                 if (outputLength > 0)
                     for (int j = 0; j < pow(followingActions.size(), depth - nodeDepth - 1); j++)
                     {
+                        int degree = treeDepth - depth - 1;
+                        if (degree >= 0)
                         for (int k = 1; k <= (pow(followingActions.size(), treeDepth - depth - 1) - 0.5) * outputLength; k++)
                             std::cout << " ";
                         for (int i = 0; i < outputLength - 1; i++)
                             std::cout << "_";
                         std::cout << " ";
+                        if (degree >= 0)
                         for (int k = 1; k <= (pow(followingActions.size(), treeDepth - depth - 1) - 0.5) * outputLength; k++)
                             std::cout << " ";
                     }

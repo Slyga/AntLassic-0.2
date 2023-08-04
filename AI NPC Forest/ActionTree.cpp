@@ -17,21 +17,17 @@ ActionTree::ActionTree(std::vector<int> followingActions_, TypeBehavior typeBeha
 {
 	followingActions = std::vector<int>(followingActions_);
 	sheets = std::vector<Node*>(followingActions.size());
-	for (size_t i = 0; i < followingActions.size(); i++)
-	{
-		sheets.push_back(NULL);
-	}
 	typeBehavior = typeBehavior_;
 }
 
-ActionTree::ActionTree(ActionTree& actionTree)
-	: ActionTree(actionTree.followingActions, actionTree.typeBehavior)
+ActionTree::ActionTree(ActionTree* actionTree)
+	: ActionTree(actionTree->followingActions, actionTree->typeBehavior)
 {
-	amountOfAction = actionTree.amountOfAction;
-	treeDepth = actionTree.treeDepth;
-	for (size_t i = 0; i < actionTree.sheets.size(); i++)
+	amountOfAction = actionTree->amountOfAction;
+	treeDepth = actionTree->treeDepth;
+	for (size_t i = 0; i < actionTree->sheets.size(); i++)
 	{
-		ActionBranch* sheet = (ActionBranch*)actionTree.sheets[i];
+		ActionBranch* sheet = (ActionBranch*)actionTree->sheets[i];
 		if (sheet != NULL) sheets[i] = new ActionBranch(*(ActionBranch*)sheet);
 		else sheets[i] = NULL;
 	}
@@ -156,12 +152,12 @@ void ActionTree::Print(int numOutputLength)
 	case 2: outputType = "price"; outputLength = 7; break;
 	case 3: outputType = "startPrice"; outputLength = 7; break;
 	case 4: outputType = "modifier"; outputLength = 8; break;
-	default: outputType = "numberGame"; outputLength = 6; break;
+	default: outputType = "numberGame"; outputLength = 4; break;
 	}
 	if (numOutputLength < 0) outputLength = -1;
 	std::cout << outputType << std::endl;
 	std::cout << "Количество использований: " << amountOfAction << std::endl;
-	for (int depth = 1; depth <= treeDepth; depth++)
+	for (unsigned int depth = 1; depth <= treeDepth; depth++)
 	{
 		std::cout << depth << ":- ";
 		for (size_t i = 0; i < sheets.size(); i++)
@@ -176,11 +172,14 @@ void ActionTree::Print(int numOutputLength)
 				if (outputLength > 0)
 					for (size_t j = 0; j < pow(followingActions.size(), depth - 1); j++)
 					{
+						int degree = treeDepth - depth - 1;
+						if (degree >= 0)
 						for (int k = 1; k <= (pow(followingActions.size(), treeDepth - depth - 1) - 0.5) * outputLength; k++)
 							std::cout << " ";
 						for (int i = 0; i < outputLength - 1; i++)
 							std::cout << "_";
 						std::cout << " ";
+						if (degree >= 0)
 						for (int k = 1; k <= (pow(followingActions.size(), treeDepth - depth - 1) - 0.5) * outputLength; k++)
 							std::cout << " ";
 					}

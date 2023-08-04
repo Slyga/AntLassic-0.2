@@ -37,7 +37,7 @@ public:
     /// Конструктор копирования
     /// </summary>
     /// <param name="actionTree">Копируемый объект</param>
-    ActionTree(ActionTree& actionTree);
+    ActionTree(ActionTree* actionTree);
 
     /// <summary>
     /// Вернуть максимальную глубину узла
