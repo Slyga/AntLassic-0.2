@@ -58,6 +58,12 @@
     <Filter Include="Header Files\Carcas\Scrolling">
       <UniqueIdentifier>{606b3a8c-dbc3-4318-89a6-110bdd593113}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Scenes">
+      <UniqueIdentifier>{18a247ca-424e-42a7-86f9-e133737de58a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes">
+      <UniqueIdentifier>{4226304a-cad9-4dee-b631-7bc417125258}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -146,6 +152,9 @@
     </ClCompile>
     <ClCompile Include="CSF\Carcas\MultilineText.cpp">
       <Filter>Source Files\Carcas</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenesMainMenu.cpp">
+      <Filter>Source Files\Scenes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -869,6 +878,9 @@
     </ClInclude>
     <ClInclude Include="CSF\csf.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenesMainMenu.h">
+      <Filter>Header Files\Scenes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

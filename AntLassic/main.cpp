@@ -10,17 +10,17 @@ Music mainMusic;
 
 void mainWindow(RenderWindow& window)
 {
-	int choise = SCENE_GAME_SITUATION_1;
+	int choise = SCENE€_MEIN_MENU;
 	while (window.isOpen())
 	{
 		switch (choise)
 		{
-		case SCENE_GAME_SITUATION_1: choise = Scene::playScene(sceneGameSituation1::getScene(window), window); break;
+		case SCENE€_MEIN_MENU: choise = Scene::playScene(ScenesMainMenu::getScene(window), window); break;
 		case WINDOW_CLOSE: window.close(); break;
 		default: window.close(); break;
 		}
 	}
-	if (sceneGameSituation1::isScene() != NULL) delete sceneGameSituation1::getScene();
+	if (ScenesMainMenu::isScene() != NULL) delete ScenesMainMenu::getScene();
 }
 
 
@@ -29,10 +29,10 @@ int main()
 	srand(time(0));
 	setlocale(LC_ALL, "Russian");
 
-	SizeWindow::setSizeWindow(Vector2i(1366, 768)/*, Vector2i(683, 384), false*/);
+	SizeWindow::setSizeWindow(Vector2i(1920, 1080), Vector2i(1024, 600), false);
 
 	View view;
-	view.reset(sf::FloatRect(0, 0, 1366, 768));
+	view.reset(sf::FloatRect(0, 0, 1920, 1080));
 
 	//view.setViewport(sf::FloatRect(0.f, 0.f, 1.f, 2.f));
 
@@ -41,7 +41,7 @@ int main()
 		SizeWindow::getIsFullScreen() ? sf::Style::Fullscreen : sf::Style::Close);
 
 	TextureBank* textureBank = new TextureBank;
-	textureBank->setTextureBank("resources/Image/test/");
+	textureBank->setTextureBank("resources/Image/MainMenu/");
 	mySprite::set—urrentTextureBank(textureBank);
 
 	Font font; font.loadFromFile("resources/comic.ttf");

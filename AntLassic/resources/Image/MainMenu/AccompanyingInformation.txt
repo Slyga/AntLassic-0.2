@@ -1,0 +1,6 @@
+SP_Background_MainMenu 0 -22
+BT_Exit_MainMenu 96 885
+BT_Options_MainMenu 96 731
+BT_Load_MainMenu 103 578
+BT_Start_MainMenu 94 420
+CR_WindowOptions_MainMenu 857 465
