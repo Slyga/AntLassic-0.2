@@ -6,6 +6,9 @@
 #include "BehaviorSelector.h"
 #include "TypeBehavior.h"
 
+/// <summary>
+/// Заглушка выбора поведения
+/// </summary>
 class MyBehaviorSelector : public BehaviorSelector
 {
 public:
@@ -36,6 +39,12 @@ public:
 int main()
 {
     setlocale(LC_ALL, "Russian");
+
+    // Тест работы алгоритма:
+    // Создание двух деревьев и заполнение его двумя действиями
+    // Запуск алгоритма выбора 10 по 4 действия
+    // Вывод состояния деревьев numberGame каждые 4 вызова
+    // Вывод состояния деревьев modifier после всех запусков
 
     MyBehaviorSelector* myBehaviorSelector = new MyBehaviorSelector();
 

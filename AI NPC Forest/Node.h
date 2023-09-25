@@ -87,7 +87,7 @@ public:
 	/// <summary>
 	/// Возвращает общий счёт узла и следющих использованных узлов
 	/// </summary>
-	/// <returns>Общее счёт узла и последющих узлов</returns>
+	/// <returns>Общее счёт узла и последующих узлов</returns>
 	virtual double GetGeneralScore() = 0;
 	
 	/// <summary>

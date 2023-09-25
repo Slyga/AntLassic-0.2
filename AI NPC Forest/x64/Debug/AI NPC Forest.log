@@ -1,2 +1,9 @@
 ﻿  AI NPC Forest.cpp
+  ActionBranch.cpp
+  ActionForest.cpp
+  ActionTree.cpp
+  Node.cpp
+C:\Старый десктоп\Не по игре\Лабы\М1 семестр\AntLassic 0.2\AntLassic-0.2\AI NPC Forest\Node.cpp(24,25): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+  ProgenitorActionForest.cpp
+  Создание кода...
   AI NPC Forest.vcxproj -> C:\Старый десктоп\Не по игре\Лабы\М1 семестр\AntLassic 0.2\AntLassic-0.2\AI NPC Forest\x64\Debug\AI NPC Forest.exe

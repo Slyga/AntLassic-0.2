@@ -56,6 +56,10 @@ public:
 	/// </summary>
 	void Delete();
 
+	/// <summary>
+	/// Вывод в консоль. Для тестирования.
+	/// </summary>
+	/// <param name="numOutputLength">1 - numberGame, 2 - price, 3 - startPrice, 4 - modifier</param>
 	void Print(int numOutputLength);
 };
 

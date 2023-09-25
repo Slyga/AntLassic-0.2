@@ -138,8 +138,10 @@ public:
     /// <return>Индекс выбранного действия</return>
     int Start(unsigned int& amountOfAction, unsigned int& treeDepth);
 
-    
-
+    /// <summary>
+    /// Вывод в консоль. Для тестирования.
+    /// </summary>
+    /// <param name="numOutputLength">1 - numberGame, 2 - price, 3 - startPrice, 4 - modifier</param>
     void Print(int depth, int treeDepth, std::string outputType, int outputLength);
 };
 
